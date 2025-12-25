@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Royal Haven</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 6px;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 15px;
+            width: 40%;
+        }
+
+        input, select {
+            width: 90%;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            var name = document.getElementById("name").value;
+            var room = document.getElementById("room").value;
+            var cost = "";
+
+            if (room == "Single") cost = "1500";
+            else if (room == "Double") cost = "2500";
+            else if (room == "Deluxe") cost = "4000";
+            else if (room == "Suite") cost = "6000";
+
+            alert(
+                "Booking Successful!\n\n" +
+                "Name: " + name + "\n" +
+                "Room Type: " + room + "\n" +
+                "Cost: ₹" + cost
+            );
+        }
+    </script>
+</head>
+<body>
+
+<h1>The Royal Haven</h1>
+<p>Welcome to <b>The Royal Haven</b>, where comfort meets elegance.</p>
+<hr>
+
+<h2>Room Details</h2>
+<table>
+    <tr><th>Room Type</th><th>Price (per night)</th></tr>
+    <tr><td>Single</td><td>1500</td></tr>
+    <tr><td>Double</td><td>2500</td></tr>
+    <tr><td>Deluxe</td><td>4000</td></tr>
+    <tr><td>Suite</td><td>6000</td></tr>
+</table>
+<hr>
+
+<h2>Booking Form</h2>
+<div class="booking-box">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label for="checkin">Check-in Date:</label><br>
+    <input type="text" id="checkin" placeholder="DD-MM-YYYY" required><br><br>
+
+    <label for="checkout">Check-out Date:</label><br>
+    <input type="text" id="checkout" placeholder="DD-MM-YYYY" required><br><br>
+
+    <label for="room">Room Type:</label><br>
+    <select id="room">
+        <option>Single</option>
+        <option>Double</option>
+        <option>Deluxe</option>
+        <option>Suite</option>
+    </select><br><br>
+
+    <button onclick="showMessage()">Book</button>
+</div>
+
+<hr>
+<h2>Contact</h2>
+<p><b>The Royal Haven</b><br>Hyderabad<br>Phone: 9876543210</p>
+
+</body>
+</html>
